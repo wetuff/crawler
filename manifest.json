@@ -1,0 +1,15 @@
+{
+  "short_name": "checkin weme",
+  "name": "checkin weme",
+  "icons": [
+    {
+      "src": "logo-weme.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "http://weme.com.br/checkin/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000"
+}

@@ -1,0 +1,175 @@
+/*******************
+    CSS ESTRUTURA
+********************/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,400,300,600,700);
+
+/*********************************************** Reset ***********************************************/
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+*::before, *::after { box-sizing: border-box; }
+
+ol, ul, li { list-style: none; }
+
+a, :link, :visited { outline: 0; text-decoration: none; cursor: pointer; }
+
+* input, * select, * textarea { font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+
+textarea { resize: none; }
+
+img { border: 0 none; max-width: 100%; }
+
+/*********************************************** Auxiliares ***********************************************/
+
+.ClearBoth { height: 0; line-height: 0; font-size: 0; clear: both; }
+
+.FloatLeft { float: left; }
+
+.FloatRight { float: right; }
+
+.Table { display: table; width: 100%; }
+
+.Cell { display: table-cell; height: 100%; vertical-align: middle; }
+
+.Botao { background: #ffffff; font-size: 24px; border: 0; border-radius: 5px; padding: 7px 25px; color: #193c8c; font-weight: normal; }
+
+.Voltar { float: right; margin-top: 40px; margin-bottom: 25px; }
+
+.Aba { display: none }
+
+.Aba.active { display: table; }
+
+.Box { background-image: url("../imagens/overlay.png"); border-radius: 7px; margin: 0 auto 50px; padding: 25px; width: 95%; color: #ffffff; text-align: center; }
+
+/*********************************************** Estrutura ***********************************************/
+html, body { min-height: 100%; height: 100%; }
+
+body { background-color: #000000; background-image: url("../imagens/overlay.png"), url("../imagens/background.jpg"); background-size: cover; font-family: "Open Sans"; font-weight: 100; background-repeat: no-repeat; background-attachment: fixed; }
+
+section { display: table; height: 100%; width: 100%; }
+
+section .Content { display: table-cell; vertical-align: middle; position: relative; }
+
+.Conteudo { margin: 0 auto; max-width: 1200px; position: relative; width: 100%; }
+
+.btn { display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-image: none; border: 1px solid transparent; border-radius: 4px; }
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus { outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
+.btn:hover,
+.btn:focus,
+.btn.focus { color: #333; text-decoration: none; }
+.btn:active,
+.btn.active { background-image: none; outline: 0; -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125); box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125); }
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="cpf"], input[type="cep"], textarea { border: 1px solid #231f20; font-size: 16px; height: 40px; padding: 7px 10px; width: 100%; }
+
+textarea { height: 100px; }
+
+select { border: 1px solid #231f20; height: 40px; width: 100%; }
+
+.row { clear: both; display: inline-block; float: left; padding: 15px 0 0; width: 100%; }
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 { position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; }
+
+/*********************************************** Conteúdo ***********************************************/
+
+header { color: #ffffff; }
+header h2 { font-size: 35px; font-weight: 800; margin-bottom: 25px; text-align: center; text-transform: lowercase; }
+header h3 { font-size: 22px; font-weight: 200; margin-bottom: 35px; text-align: center; }
+header .Logo { margin: 30px auto; max-width: 120px; }
+
+
+
+.secHome { }
+.secHome .tiposCadastro { display: table; width: 100%; }
+.secHome .tiposCadastro li { display: table-cell; vertical-align: middle; width: 50%; }
+.secHome .tiposCadastro li a { color: #ffffff; font-size: 30px; line-height: 40px; width: 100%; display: block; margin: 0 auto; border-radius: 7px; text-align: center; padding: 50px 25px; text-align: center; max-width: 90%; }
+
+
+
+.secTipo { }
+.secTipo .tiposCadastro { display: table; width: 100%; }
+.secTipo .tiposCadastro li { display: table-cell; vertical-align: middle; width: 50%; }
+.secTipo .tiposCadastro li a { color: #ffffff; font-size: 30px; line-height: 40px; width: 100%; display: block; margin: 0 auto; border-radius: 7px; text-align: center; padding: 50px 25px; text-align: center; max-width: 90%; }
+
+
+
+.secStandard { }
+.secStandard label { }
+.secStandard .Formulario { background-image: url("../imagens/overlay.png"); padding: 25px; color: #ffffff; display: block; background-repeat: repeat; overflow: hidden; border-radius: 5px; max-width: 600px; margin: 0 auto; width: 95%; }
+.secStandard .Formulario .Botao { color: #193c8c; background: #fbb82f; float: right; }
+
+
+
+.secConsulta { }
+.secConsulta label { }
+.secConsulta .Formulario { background-image: url("../imagens/overlay.png"); padding: 25px; color: #ffffff; display: block; background-repeat: repeat; overflow: hidden; border-radius: 5px; max-width: 600px; margin: 0 auto; width: 95%; }
+.secConsulta .Formulario .Botao { color: #193c8c; background: #fbb82f; float: right; }
+
+
+
+.secSocial { }
+.secSocial .Objetivo { max-width: 600px; margin: 0 auto 30px; }
+.secSocial .Botoes { }
+.secSocial .Botoes .Botao { margin: 0 auto 15px; max-width: 250px; padding: 0; border: 0; background: transparent; }
+.secSocial .Botoes .Facebook { }
+.secSocial .Botoes .Facebook .fb_iframe_widget { }
+.secSocial .Botoes .Linkedin { }
+.secSocial .Botoes .Linkedin a { width: 100%; font-size: 16px; text-align: left; padding-left: 55px; }
+.secSocial .Botoes .Linkedin i { font-size: 25px; line-height: 35px; }
+.secSocial .Inicio { }
+
+
+.secSucesso { }
+.secSucesso .Sucesso { max-width: 600px; }
+.secSucesso .Sucesso h3 { margin-bottom: 35px; }
+.secSucesso .Sucesso .Imagem { margin: 0 auto; max-width: 200px; }
+
+
+
+.secRelatorio { }
+.secRelatorio .Filtro {  }
+.secRelatorio #slcPeriodoIndicadores { max-width: 300px; display: block; float: left; }
+
+
+
+#excel { text-align: left; }
+#excel .Imagem { width: 100px; padding-right: 20px; position: relative; }
+#excel .Imagem img { position: absolute; top: 0; left: 0; }
+#excel .Nome { }
+#excel .Email { }
+#excel .Sobre { }
+#excel .Objetivo { }
+#excel .Vazio { height: 35px; }
+
+#excelHidden { height: 1px; opacity: 0; overflow: hidden; }
+
+#exportaExcel { text-align: right; margin-bottom: 15px; overflow: hidden; }
+#exportaExcel button { color: #193c8c; background: #fbb82f; float: right; }
+
+
+@media screen and (max-width: 965px) {
+    body { height: auto; }
+}
+
+@media screen and (max-width: 768px) {
+    .secSocial .Botoes .Linkedin a { max-width: 250px; }
+}
+
+@media screen and (max-width: 500px) {
+    .secSocial h2 { font-size: 25px; font-weight: 800; margin-bottom: 15px; text-align: center; text-transform: lowercase; }
+    .secSocial h3 { font-size: 18px; margin-bottom: 25px; }
+    .secSocial .Logo { margin: 15px auto; max-width: 100px; }
+    .secSocial .Box { padding: 15px; }
+    .secHome .tiposCadastro li { display: block; vertical-align: middle; width: 100%; margin-bottom: 10px; }
+    .Voltar { margin-right: 15px; }
+    .secHome .tiposCadastro li a { font-size: 20px; line-height: 30px; padding: 40px 25px; }
+}
+
+@media screen and (max-width: 400px) {
+}
