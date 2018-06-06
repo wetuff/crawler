@@ -1,6 +1,6 @@
 <?php
 
-	define('DB_SERVER', '107.180.51.22');
+	define('DB_SERVER', '132.148.223.5');
 	define('DB_USERNAME', 'crawler');    // DB username
 	define('DB_PASSWORD', 'checkin@2018');    // DB password
 	define('DB_DATABASE', 'crawler');      // DB name
