@@ -4,8 +4,8 @@ window.chartColorsOpacity = { red: 'rgb(255, 99, 132, 0.5)', orange: 'rgb(255, 1
 
 var PrincipaisNoticiasBrasil = "https://news.google.com.br/news/feeds?pz=1&cf=all&ned=pt-BR_br&hl=pt-BR&output=rss";
 var PrincipaisNoticiasMundo = "https://news.google.com.br/news/feeds?pz=1&cf=all&ned=pt-BR_br&hl=pt-BR&topic=w&output=rss";
-//var PrincipaisVideosBrasilURL = "https://content.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&locale=br&maxResults=5&key=AIzaSyDe6nVJk2ZB9niEqKBHjwtQyZ88UneQhw0";
-var PrincipaisVideosBrasilURL = "https://content.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&locale=br&maxResults=5&key=AIzaSyCxz1K24DnfCzTPGtofbTA2MC8KuDrqmYI";
+//var PrincipaisVideosBrasilURL = "https://content.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&locale=br&maxResults=5&key=";
+var PrincipaisVideosBrasilURL = "https://content.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&locale=br&maxResults=5&key=";
 var PrincipaisVideosBrasil;
 
 jQuery(document).ready(function () {
@@ -32,26 +32,26 @@ function loadTendencia(word, infos, micros) {
 
     $("h2 span").html(word);
 
-    //var urlFeed = "https://newsapi.org/v2/everything?q=" + word + " macrotendência&apiKey=0ea5cc48db054648abc80639c81b4d4a";
+    //var urlFeed = "https://newsapi.org/v2/everything?q=" + word + " macrotendência&apiKey=";
     //var urlFeed = "https://news.google.com/search?q=tecnologia+macrotend%C3%AAncia&output=rss&hl=pt-BR&gl=BR&ceid=BR:pt-419";
     //var urlFeed = "https://news.google.com.br/news/feeds?pz=1&cf=all&ned=pt-BR_br&hl=pt-BR&q=" + word + " macrotendência&output=json";
-    //var urlFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fpz%3D1%26cf%3Dall%26ned%3Dpt-BR_br%26hl%3Dpt-BR%26q%3D" + word + "%2Bmacrotend%C3%AAncia%26output%3Djson&api_key=ilj70eoey5wnqi5up2dtdst1mp91o5wfc51zurzr";
+    //var urlFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fpz%3D1%26cf%3Dall%26ned%3Dpt-BR_br%26hl%3Dpt-BR%26q%3D" + word + "%2Bmacrotend%C3%AAncia%26output%3Djson&api_key=";
 
     var urlFeed;
     if (word.toLowerCase() == "tecnologia") {
-        urlFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fcf%3Dall%26hl%3Dpt-BR%26ned%3Dpt-BR_br%26output%3Djson%26pz%3D1%26q%3Dtendencia%2Btecnol%C3%B3gica&api_key=ilj70eoey5wnqi5up2dtdst1mp91o5wfc51zurzr";
+        urlFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fcf%3Dall%26hl%3Dpt-BR%26ned%3Dpt-BR_br%26output%3Djson%26pz%3D1%26q%3Dtendencia%2Btecnol%C3%B3gica&api_key=";
     }
     if (word.toLowerCase() == "empreendedorismo") {
-        urlFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fcf%3Dall%26hl%3Dpt-BR%26ned%3Dpt-BR_br%26output%3Djson%26pz%3D1%26q%3Dempreendedorismo&api_key=ilj70eoey5wnqi5up2dtdst1mp91o5wfc51zurzr";
+        urlFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fcf%3Dall%26hl%3Dpt-BR%26ned%3Dpt-BR_br%26output%3Djson%26pz%3D1%26q%3Dempreendedorismo&api_key=";
     }
     if (word.toLowerCase() == "educação" || word.toLowerCase() == "educa%C3%A7%C3%A3o") {
-        urlFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fcf%3Dall%26hl%3Dpt-BR%26ned%3Dpt-BR_br%26output%3Djson%26pz%3D1%26q%3Dtecnologia%2Beduca%25C3%25A7%25C3%25A3o&api_key=ilj70eoey5wnqi5up2dtdst1mp91o5wfc51zurzr";
+        urlFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fcf%3Dall%26hl%3Dpt-BR%26ned%3Dpt-BR_br%26output%3Djson%26pz%3D1%26q%3Dtecnologia%2Beduca%25C3%25A7%25C3%25A3o&api_key=";
     }
     if (word.toLowerCase() == "design") {
-        urlFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fcf%3Dall%26hl%3Dpt-BR%26ned%3Dpt-BR_br%26output%3Djson%26pz%3D1%26q%3Dinova%25C3%25A7%25C3%25A3o%2Bdesign&api_key=ilj70eoey5wnqi5up2dtdst1mp91o5wfc51zurzr";
+        urlFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fcf%3Dall%26hl%3Dpt-BR%26ned%3Dpt-BR_br%26output%3Djson%26pz%3D1%26q%3Dinova%25C3%25A7%25C3%25A3o%2Bdesign&api_key=";
     }
     if (word.toLowerCase() == "saúde") {
-        urlFeed = " https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fcf%3Dall%26hl%3Dpt-BR%26ned%3Dpt-BR_br%26output%3Djson%26pz%3D1%26q%3Dinova%25C3%25A7%25C3%25A3o%2Bsa%25C3%25BAde&api_key=ilj70eoey5wnqi5up2dtdst1mp91o5wfc51zurzr";
+        urlFeed = " https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com.br%2Fnews%2Ffeeds%3Fcf%3Dall%26hl%3Dpt-BR%26ned%3Dpt-BR_br%26output%3Djson%26pz%3D1%26q%3Dinova%25C3%25A7%25C3%25A3o%2Bsa%25C3%25BAde&api_key=";
     }
     var visitante = "";
 
