@@ -237,7 +237,7 @@ function loadParticipantes() {
 
                 Infos += '<tr periodo="' + Nyear + '-' + Nmonth + '">';
                 Infos += '<td class="Nome">' + nome + '</td>';
-                Infos += '<td class="Email">' + participante.email + '</td>';
+                Infos += '<td class="Email">' + Email + '</td>';
                 Infos += '<td class="Empresa">' + Empresa + '</td>';
                 Infos += '<td class="Data">' + participante.data + '</td>';
                 Infos += '<td class="Objetivo">' + participante.objetivo + '</td>';

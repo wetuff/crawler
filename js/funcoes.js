@@ -23,11 +23,12 @@ $(document).ready(function () {
         var nome = $("#txtNome").val();
         var empresa = $("#txtEmpresa").val();
         var email = $("#txtEmail").val();
+        var cargo = $("#txtCargo").val();
         var objetivo = $(document).find("#slcAssunto option:selected").val();
         var genero = $(document).find("#slcGenero option:selected").val();
         var agente = navigator.userAgent;
         if (genero == "" || genero == null) { genero = "-";}
-        var Infos = { provider: 'email', id: $.now(), firstName: nome, lastName: "-", email: email, about: '-', gender: genero, locale: 'weme', picture: '-', link: '-', objetivo: objetivo, empresa: empresa, useragent: agente  };
+        var Infos = { provider: 'email', id: $.now(), firstName: nome, lastName: "-", email: email, about: '-', gender: genero, locale: 'weme', picture: '-', link: '-', objetivo: objetivo, empresa: empresa, useragent: agente, cargo: cargo  };
         cadastro(Infos, 'email');
     });
 
@@ -35,11 +36,12 @@ $(document).ready(function () {
         e.preventDefault();
 
         var email = $("#txtEmail2").val();
+        var cargo = $("#txtCargo2").val();
         var objetivo = $(document).find("#slcAssunto2 option:selected").val();
         if (objetivo == "" || objetivo == null) { objetivo = "Não informado"; }
         var agente = navigator.userAgent;
         if (agente == null || agente == "") { agente = "Inválido"; }
-        var Infos = { email: email, objetivo: objetivo, useragent: agente, id: $.now() };
+        var Infos = { email: email, objetivo: objetivo, useragent: agente, id: $.now(), cargo: cargo };
         jaCadastrado(Infos, 'email');
 
     });
@@ -179,11 +181,11 @@ function cadastro(Infos, location) {
             if (location == 'linkedin') { IN.User.logout(removeProfileData); }
             //alert("Check in realizado com sucesso!");
             setTimeout(function () {
-                window.location.replace('http://weme.com.br/checkin');
+                window.location.replace('https://www.weme.com.br/eventos/');
             }, 1500);
         }, error: function (data) {
             setTimeout(function () {
-                window.location.replace('http://weme.com.br/checkin');
+                window.location.replace('https://www.weme.com.br/eventos/');
             }, 1500);
         }
     });
@@ -204,12 +206,12 @@ function jaCadastrado(Infos, location) {
             if (location == 'linkedin') { IN.User.logout(removeProfileData); }
             //alert("Check in realizado com sucesso!");
             setTimeout(function () {
-                window.location.replace('http://weme.com.br/checkin');
+                window.location.replace('https://www.weme.com.br/eventos/');
             }, 1500);
 
         }, error: function (data) {
             setTimeout(function () {
-                window.location.replace('http://weme.com.br/checkin');
+                window.location.replace('https://www.weme.com.br/eventos/');
             }, 1500);
         }
     });

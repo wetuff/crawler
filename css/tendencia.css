@@ -1,0 +1,62 @@
+
+#secTendencias { margin-bottom: 50px }
+#secTendencias h2 { text-align: center; font-size: 35px; margin-bottom: 50px; margin-top: 50px; }
+#secTendencias h2::after { width: 15%; height: 1px; background: #000000; display: block; margin: 15px auto 30px; content: " "; }
+#secTendencias h3 { text-align: center; }
+#secTendencias h4 { font-size: 22px; margin-top: 15px; margin-bottom: 5px; border-top: 1px solid; padding-top: 15px; }
+
+#secTendencias input[type=text], #secTendencias input[type=email], #secTendencias input[type=password], #secTendencias textarea { border: 0; border-bottom: 1px solid; margin-bottom: 15px; }
+
+#secTendencias .Extra { font-size: 14px; text-align: center; margin-bottom: 30px; }
+
+.listaTendencias { display: flex; flex-flow: row wrap; margin-left: -10px; margin-right: -10px; }
+.listaTendencias > li { font-size: 16px; vertical-align: top; border: 1px solid #ddd; flex: 1 1 1; width: calc(20% - 20px); margin: 10px; cursor: pointer; display: inline-table; }
+.listaTendencias > li:hover { background: #eee; }
+.listaTendencias > li.active { display: table; width: calc(100% - 20px); background: #eee; padding: 15px 15px 0 15px; }
+.listaTendencias li * { font-size: 14px; }
+.listaTendencias li a { font-weight: bold; display: table-cell; width: calc(100% - 35px); font-size: 18px; line-height: 26px; vertical-align: middle; padding: 15px; }
+
+#Interessados { text-align: center; }
+#Interessados .botao { margin-top: 10px; }
+#Interessados #listaInteressados .visitante * { font-size: 14px; }
+#Interessados #listaInteressados .visitante { display: inline-table; width: 33.3%; margin-bottom: 30px; padding-right: 15px; vertical-align: top; color: #000000; }
+#Interessados #listaInteressados .visitante .nomeVisitante { display: block; font-weight: bold; text-transform: capitalize; }
+#Interessados #listaInteressados .visitante .emailVisitante { font-size: 13px; font-style: italic; display: block; margin-bottom: 5px; }
+#Interessados #listaInteressados .visitante .objetivoVisitante { font-size: 13px; display: block; }
+
+#Noticias { margin-bottom: 50px; }
+#Noticias h3 { text-align: center; margin: 50px auto; font-size: 24px; font-weight: normal; font-style: italic; }
+#Noticias #listaNoticias * { font-size: 14px; }
+#Noticias #listaNoticias li { margin-top: 30px; }
+#Noticias #listaNoticias li:first-child { display: none; }
+#Noticias #listaNoticias li .noticia { }
+#Noticias #listaNoticias li .noticia .titulo { font-size: 18px; font-weight: bold; line-height: 26px; display: block; }
+#Noticias #listaNoticias li .noticia .data { font-style: italic; }
+
+#excelHidden { height: 1px; opacity: 0; overflow: hidden; }
+
+#microtendencias { margin: 50px 0 100px; }
+#microtendencias h4 { font-size: 18px; font-weight: 100; text-align: center; font-style: italic; }
+#microtendencias span { display: inline-block; }
+#microtendencias li { font-size: 20px; display: inline-block; font-weight: bold; }
+#microtendencias li:after { content: ","; font-weight: normal; font-size: 16px; margin-right: 5px }
+#microtendencias li a { }
+#microtendencias li:last-child:after { content: "" }
+
+@media screen and (max-width: 1300px) {
+    .listaTendencias li a { min-width: calc(25% - 20px); }
+}
+
+@media screen and (max-width: 1024px) {
+    .listaTendencias li a { min-width: calc(33.3% - 20px); }
+    .listaTendencias li .info .visitante { width: 33.3% }
+}
+
+@media screen and (max-width: 768px) {
+    .listaTendencias li a { min-width: auto; width: calc(100% - 20px); }
+    .listaTendencias li .info .visitante { width: 50% }
+}
+
+@media screen and (max-width: 600px) {
+    .listaTendencias li .info .visitante { width: 100% }
+}

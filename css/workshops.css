@@ -1,0 +1,44 @@
+
+#secWorkshops { margin-bottom: 50px }
+#secWorkshops h2 { text-align: center; font-size: 35px; margin-bottom: 50px; margin-top: 50px; }
+#secWorkshops h2::after { width: 15%; height: 1px; background: #000000; display: block; margin: 15px auto 30px; content: " "; }
+#secWorkshops h3 { text-align:center; }
+#secWorkshops h4 { font-size: 22px; margin-top: 15px; margin-bottom: 5px; border-top: 1px solid; padding-top: 15px; }
+
+#secWorkshops input[type=text], #secWorkshops input[type=email], #secWorkshops input[type=password], #secWorkshops textarea { border: 0; border-bottom: 1px solid; margin-bottom: 15px; }
+
+#secWorkshops .Extra { font-size: 14px; text-align: center; margin-bottom: 30px; }
+
+#listaWorkshops { }
+#listaWorkshops > a { font-size: 16px; display: table; border-top: 1px solid #dddddd; width: 100%; padding: 15px; }
+#listaWorkshops > a:first-child { border: 0; }
+#listaWorkshops > a:hover { background: #eee; }
+#listaWorkshops .titulo { font-size: 18px; font-weight: bold; display: block; }
+#listaWorkshops .infos { display: table; margin-top: 7px; }
+#listaWorkshops .infos .data { display: table-cell; font-style: italic; padding-right: 10px; }
+#listaWorkshops .infos .data:before { content: "data: "; font-size: 12px; color: #999; }
+#listaWorkshops .infos .preco { display: table-cell; padding: 0 10px; border-left: 1px solid #999999; border-right: 1px solid #999999; }
+#listaWorkshops .infos .preco:before { content: "R$: "; font-size: 12px; color: #999; }
+#listaWorkshops .infos .inscritos { display: table-cell; padding: 0 10px; }
+#listaWorkshops .infos .inscritos:before { content: "inscritos: "; font-size: 12px; color: #999; }
+#listaWorkshops .infos .total { display: table-cell; padding-left: 10px; border-left: 1px solid #999999; }
+#listaWorkshops .infos .total:before { content: "total: "; font-size: 12px; color: #999; }
+#listaWorkshops .tags { margin-top: 5px; display: table; }
+#listaWorkshops .tags:before { content: "tags: "; font-size: 12px; color: #999; }
+
+
+#secWorkshop * { transition-property: all; transition-duration: 0.5s; transition-timing-function: ease; transition-delay: 0s; }
+#secWorkshop input[type="text"], #secWorkshop input[type="tel"], #secWorkshop input[type="date"], #secWorkshop input[type="cpf"], #secWorkshop input[type="cep"], #secWorkshop textarea { }
+#secWorkshop input[type="text"]:focus, #secWorkshop input[type="tel"]:focus, #secWorkshop input[type="date"]:focus, #secWorkshop input[type="cpf"]:focus, #secWorkshop input[type="cep"]:focus, #secWorkshop textarea:focus { }
+#secWorkshop .nome input { font-size: 30px; margin-bottom: 20px; margin-top: 10px; padding: 0; border: 0; }
+#secWorkshop .nome input:focus { border: 1px solid #231f20; padding: 7px 10px; font-size: 26px; }
+#secWorkshop .data { display: table-cell; font-style: italic; padding-right: 10px; }
+#secWorkshop .data:before { content: "data: "; font-size: 12px; color: #999; }
+#secWorkshop .preco { display: table-cell; padding: 0 10px; border-left: 1px solid #999999; border-right: 1px solid #999999; }
+#secWorkshop .preco:before { content: "R$: "; font-size: 12px; color: #999; }
+#secWorkshop .inscricoes { display: table-cell; padding: 0 10px; }
+#secWorkshop .inscricoes:before { content: "inscritos: "; font-size: 12px; color: #999; }
+#secWorkshop .tendencias { }
+#secWorkshop .tendencias .macro { margin-top: 30px; }
+#secWorkshop .tendencias .micro { margin-top: 30px; }
+#secWorkshop .descricao { margin-top: 50px; padding-top: 50px; border-top: 1px solid #ccc; font-size: 14px; }

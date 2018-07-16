@@ -3,6 +3,7 @@
 	require 'dbconfig.php';
 
 	$email = $_POST['email'];
+	$cargo = $_POST['cargo'];
 	$objetivo = $_POST['objetivo'];
 	$useragent = $_POST['useragent'];
 	$id = $_POST['id'];
@@ -36,6 +37,11 @@
 			mysqli_query($connection, $query);
 			mysqli_query($connection, $queryObjetivo);
 
+			if($cargo != null && $cargo != ""){
+				$queryC = "UPDATE users SET cargo='$cargo' WHERE email='$email'";
+				mysqli_query($connection, $queryC);
+			}
+
 			print_r("update");
 		}
 	} else{
@@ -44,7 +50,11 @@
 		$checkCadastro2 = mysqli_num_rows($jaCadasgtrado2);
 
 		if (empty($checkCadastro2)) {
-			$query = "INSERT INTO invalido (oauth_uid, email, visitas, useragent) VALUES ('$id','$email','1','$useragent')";
+			if($cargo != null && $cargo != ""){
+				$query = "INSERT INTO invalido (oauth_uid, email, visitas, useragent, cargo) VALUES ('$id','$email','1','$useragent','$cargo')";
+			} else {
+				$query = "INSERT INTO invalido (oauth_uid, email, visitas, useragent) VALUES ('$id','$email','1','$useragent')";
+			}
 			$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent) VALUES ('$id','$objetivo','$useragent')";
 			mysqli_query($connection, $query);
 			mysqli_query($connection, $queryObjetivo);
@@ -57,6 +67,10 @@
 			}
 			mysqli_query($connection, $query);
 			mysqli_query($connection, $queryObjetivo);
+			if($cargo != null && $cargo != ""){
+				$queryC = "UPDATE users SET cargo='$cargo' WHERE email='$email'";
+				mysqli_query($connection, $queryC);
+			}
 			print_r("update 3");
 		}
 

@@ -1,0 +1,67 @@
+
+#secEmpresa { margin-bottom: 50px }
+#secEmpresa h2 { text-align: center; font-size: 35px; margin-bottom: 50px; margin-top: 50px; }
+#secEmpresa h2::after { width: 15%; height: 1px; background: #000000; display: block; margin: 15px auto 30px; content: " "; }
+#secEmpresa h4 { font-size: 22px; margin-top: 15px; margin-bottom: 5px; border-top: 1px solid; padding-top: 15px; }
+
+#secEmpresa input[type=text], #secEmpresa input[type=email], #secEmpresa input[type=password], #secEmpresa textarea { border: 0; border-bottom: 1px solid; margin-bottom: 15px; }
+
+#secEmpresa .imagem img { margin-right: 15px; margin-bottom: 15px; }
+#secEmpresa .nome { font-size: 40px; font-weight: bold; margin-bottom: 5px; }
+#secEmpresa .email { font-style: italic; }
+#secEmpresa .interesses { margin-top: 20px; font-size: 16px; }
+#secEmpresa .empresa { }
+#secEmpresa .endereco { }
+#secEmpresa .telefone { }
+#secEmpresa .sobre { margin-top: 50px }
+
+#secEmpresa .Outros { }
+#secEmpresa .Outros h3 { font-size: 30px; margin: 30px 0 15px; }
+#secEmpresa .Outros .total { font-size: 18px; border-top: 1px solid #ccc; padding-top: 10px; margin-top: 15px; }
+#secEmpresa .Outros .evento { font-size: 16px; padding-left: 15px; margin-bottom: 5px; }
+
+/*#listaEmpresas { }
+#listaEmpresas > li { display: inline-table; margin-bottom: 30px; width: 20%; border-radius: 5px; padding: 15px; border: 1px solid #ddd; margin-left: 15px; margin-right: 15px; vertical-align: top; cursor: pointer; }*/
+#listaEmpresas { display: flex; flex-flow: row wrap; margin-left: -10px; margin-right: -10px; }
+#listaEmpresas > li { font-size: 16px; vertical-align: top; padding: 15px; border: 1px solid #ddd; flex: 1 1 1; width: calc(20% - 20px); margin: 10px; cursor: pointer; }
+#listaEmpresas > li:hover { background: #eee; }
+#listaEmpresas > li.active { display: table; width: calc(100% - 20px); background: #eee; padding: 15px 15px 0 15px; }
+#listaEmpresas li * { font-size: 14px; }
+#listaEmpresas li .titulo { font-weight: bold; display: table-cell; width: 100%; font-size: 18px; line-height: 26px; vertical-align: middle; padding-right: 10px; }
+#listaEmpresas li .visitas { /*! float: right; */ width: 35px; text-align: right; font-style: italic; font-weight: normal; display: table-cell; }
+#listaEmpresas li .visitas span { border-radius: 50%; overflow: hidden; background: #000000; color: #ffffff; width: 35px; height: 35px; display: inline-block; text-align: center; line-height: 35px; }
+#listaEmpresas li .mais { display:none; }
+#listaEmpresas li .endereco { display: none; }
+#listaEmpresas li .telefone { display: none; }
+#listaEmpresas li .info { display: none; }
+#listaEmpresas > li.active .titulo { max-width: 70%; display: table; float: left; }
+#listaEmpresas > li.active .visitas { width: 100%; display: table; max-width: 30%; }
+#listaEmpresas > li.active .endereco { display: inline-block; width: 100%; font-size: 13px; margin-top: 5px; }
+#listaEmpresas > li.active .telefone { display: table; width: 100%; font-size: 13px; }
+#listaEmpresas > li.active .mais { display: inline-table; float: right; margin-top: 15px; font-size: 18px; background: #1b51aa; color: #ffffff; text-transform: lowercase; padding: 10px 15px; border-radius: 5px; }
+#listaEmpresas > li.active .info { display: table; margin-top: 15px; float: left; padding-top: 15px; border-top: 1px solid; width: 100%; }
+#listaEmpresas li .info .visitante { display: inline-table; width: 20%; margin-bottom: 30px; padding-right: 15px; vertical-align: top; color: #000000; }
+#listaEmpresas li .info .visitante .nomeVisitante { display: block; font-weight: bold; text-transform: capitalize; }
+#listaEmpresas li .info .visitante .emailVisitante { font-size: 13px; font-style: italic; display: block; margin-bottom: 5px; }
+#listaEmpresas li .info .visitante .objetivoVisitante { font-size: 13px; display: block; }
+
+
+
+
+@media screen and (max-width: 1300px) {
+    #listaEmpresas a { min-width: calc(25% - 20px); }
+}
+
+@media screen and (max-width: 1024px) {
+    #listaEmpresas a { min-width: calc(33.3% - 20px); }
+    #listaEmpresas li .info .visitante { width:33.3% }
+}
+
+@media screen and (max-width: 768px) {
+    #listaEmpresas a { min-width: auto; width: calc(100% - 20px); }
+    #listaEmpresas li .info .visitante { width: 50% }
+}
+
+@media screen and (max-width: 600px) {
+    #listaEmpresas li .info .visitante { width: 100% }
+}

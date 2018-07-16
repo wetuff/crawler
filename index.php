@@ -1,6 +1,18 @@
 <?php session_start();
 	require_once 'functions.php';
 	header('Content-Type: text/html; charset=utf-8');
+
+	$query3 = "SELECT * FROM crawler.macrotendencias";
+	$result3 = mysqli_query($connection, $query3);
+
+	$interesses = "";
+
+	if ( $result3 ) 
+	{ 
+		while($aux = mysqli_fetch_array($result3)){
+			$interesses .= '<option value="'.$aux["tendencia"].'">'.$aux["tendencia"].'</option>';				
+		}
+	}
 ?>
 <!doctype html>
 <html>
@@ -75,32 +87,18 @@
 									<input type="email" name="txtEmail2" id="txtEmail2" required>
 								</div>
 							</div>
-							<!--<div class="row">
+							<div class="row">
 								<div class="col-md-12">
-									<label>Objetivo:</label>
-									<select id="slcObjetivo2" name="slcObjetivo2" required>
-										<option value="Não informado">Selecione</option>
-										<option value="Reunião empresa">Reunião empresa</option>
-										<option value="Demoday">Demoday</option>
-										<option value="Visita">Visita</option>
-										<option value="Wtalk">Wtalk</option>
-										<option value="Wshop">Wshop</option>
-										<option value="WMXP">WMXP</option>
-										<option value="Outros eventos">Outros eventos</option>
-									</select>
+									<label>Cargo:</label>
+									<input type="text" name="txtCargo2" id="txtCargo2">
 								</div>
-							</div>-->
+							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<label>Assunto de interesse:</label>
 									<select id="slcAssunto2" name="slcAssunto2" required>
 										<option value="Não informado">Selecione</option>
-										<option value="Design">Design</option>
-										<option value="Tecnologia">Tecnologia</option>
-										<option value="Empreendedorismo">Empreendedorismo</option>
-										<option value="Saúde">Saúde</option>
-										<option value="Educação">Educação</option>
-										<option value="Outros">Outros</option>
+										<?php echo $interesses; ?>
 									</select>
 								</div>
 							</div>
@@ -138,49 +136,18 @@
 									<input type="text" name="txtEmpresa" id="txtEmpresa" required>
 								</div>
 							</div>
-							<!--<div class="row">
+							<div class="row">
 								<div class="col-md-12">
-									<label>Me identifico como:</label>
-									<select id="slcGenero" name="slcGenero" required>
-										<option value="Não informado">Selecione</option>
-										<option value="F">Mulher</option>
-										<option value="M">Homem</option>
-										<option value="T">Travesti</option>
-										<option value="TG">Transgênero</option>
-										<option value="Pt">Pessoa Transexual</option>
-										<option value="No">Neutro</option>
-										<option value="S">Sem gênero</option>
-										<option value="O">Outros</option>
-									</select>
+									<label>Cargo:</label>
+									<input type="text" name="txtCargo" id="txtCargo">
 								</div>
-							</div>-->
-							<!--<div class="row">
-								<div class="col-md-12">
-									<label>Objetivo:</label>
-									<select id="slcObjetivo" name="slcObjetivo" required>
-										<option value="Não informado">Selecione</option>
-										<option value="Primeira vez">Primeira vez</option>
-										<option value="Reunião empresa">Reunião empresa</option>
-										<option value="Demoday">Demoday</option>
-										<option value="Visita">Visita</option>
-										<option value="Wtalk">Wtalk</option>
-										<option value="Wshop">Wshop</option>
-										<option value="WMXP">WMXP</option>
-										<option value="Outros eventos">Outros eventos</option>
-									</select>
-								</div>
-							</div>-->
+							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<label>Assunto de interesse:</label>
 									<select id="slcAssunto" name="slcAssunto" required>
 										<option value="Não informado">Selecione</option>
-										<option value="Design">Design</option>
-										<option value="Tecnologia">Tecnologia</option>
-										<option value="Empreendedorismo">Empreendedorismo</option>
-										<option value="Saúde">Saúde</option>
-										<option value="Educação">Educação</option>
-										<option value="Outros">Outros</option>
+										<?php echo $interesses; ?>
 									</select>
 								</div>
 							</div>

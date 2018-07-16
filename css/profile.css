@@ -1,0 +1,46 @@
+
+#secProfile { margin-bottom: 50px }
+#secProfile h2 { text-align: center; font-size: 35px; margin-bottom: 50px; margin-top: 50px; }
+#secProfile h2::after { width: 15%; height: 1px; background: #000000; display: block; margin: 15px auto 30px; content: " "; }
+#secProfile h4 { font-size: 22px; margin-top: 15px; margin-bottom: 5px; border-top: 1px solid; padding-top: 15px; }
+
+#secProfile input[type=text], #secProfile input[type=email], #secProfile input[type=password], #secProfile textarea { border: 0; border-bottom: 1px solid; margin-bottom: 15px; }
+
+#secProfile .imagem img { margin-right: 15px; margin-bottom: 15px; }
+#secProfile .nome { font-size: 40px; font-weight: bold; margin-bottom: 5px; }
+#secProfile .email { font-style: italic; }
+#secProfile .interesses { margin-top: 20px; font-size: 16px; }
+#secProfile .interesses span { display: inline-block; }
+#secProfile .interesses li { font-size: 20px; display: inline-block; font-weight: normal; }
+#secProfile .interesses li:after { content: ","; font-weight: normal; font-size: 16px; margin-right: 5px }
+#secProfile .interesses li a { }
+#secProfile .interesses li:last-child:after { content: "" }
+#secProfile .empresa { }
+#secProfile .endereco { }
+#secProfile .telefone { }
+#secProfile .sobre { margin-top: 50px }
+
+#secProfile .Outros { }
+#secProfile .Outros h3 { font-size: 30px; margin: 30px 0 15px; }
+#secProfile .Outros .total { font-size: 18px; border-top: 1px solid #ccc; padding-top: 10px; margin-top: 15px; }
+#secProfile .Outros .evento { font-size: 16px; padding-left: 15px; margin-bottom: 5px; }
+
+#contactList { display: flex; flex-flow: row wrap; margin-left: -10px; margin-right: -10px; }
+#contactList a { font-size: 16px; vertical-align: top; padding: 15px; border: 1px solid #ddd; flex: 1 1 1; width: calc(20% - 20px); margin: 10px; }
+#contactList a .titulo { display: block; font-size: 24px; font-weight: bold; text-transform: capitalize; }
+#contactList a .empresa { margin: 5px 0; display: block; }
+#contactList a .email { display: block; font-style: italic; font-size: 14px; text-transform: lowercase; }
+
+
+
+@media screen and (max-width: 1300px) {
+    #contactList a { min-width: calc(25% - 20px); }
+}
+
+@media screen and (max-width: 1024px) {
+    #contactList a { min-width: calc(33.3% - 20px); }
+}
+
+@media screen and (max-width: 768px) {
+    #contactList a { min-width: auto; width: calc(100% - 20px); }
+}

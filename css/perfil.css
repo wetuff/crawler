@@ -1,0 +1,155 @@
+/*******************
+    CSS ESTRUTURA
+********************/
+
+
+/*********************************************** Reset ***********************************************/
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+*::before, *::after { box-sizing: border-box; }
+
+ol, ul, li { list-style: none; font-size: 0 }
+
+a, :link, :visited { outline: 0; text-decoration: none; cursor: pointer; color: #131316; }
+
+* input, * select, * textarea { font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+
+textarea { resize: none; }
+
+img { border: 0 none; max-width: 100%; }
+
+/*********************************************** Auxiliares ***********************************************/
+
+.ClearBoth { height: 0; line-height: 0; font-size: 0; clear: both; }
+
+.FloatLeft { float: left; }
+
+.FloatRight { float: right; }
+
+.Table { display: table; width: 100%; }
+
+.Cell { display: table-cell; height: 100%; vertical-align: middle; }
+
+.botao a, input[type="button"], input[type="submit"] { background: rgba(41, 121, 255, 1) none repeat scroll 0 0; border: 0 none; border-radius: 5px; color: #ffffff; cursor: pointer; display: inline-block; font-size: 14px; font-weight: bold; line-height: 44px; min-width: 140px; padding: 0 30px; position: relative; vertical-align: middle; text-align: center; }
+
+/*********************************************** Estrutura ***********************************************/
+
+body { color: #131316; font-family: Arial,Helvetica,sans-serif; font-size: 14px; }
+
+html, body { height: 100%; min-height: 100%; }
+
+section { display: table; width: 100%; }
+
+section .Content { display: table-cell; vertical-align: middle; position: relative; }
+
+.Conteudo { margin: 0 auto; max-width: 1000px; position: relative; width: 100%; }
+
+button, .btn { background: #ffed00 none repeat scroll 0 0; border: 0; color: #000000; cursor: pointer; display: block; font-size: 20px; font-weight: bold; line-height: 20px; margin-left: auto; margin-right: auto; max-width: 100%; padding: 25px 0; text-transform: uppercase; width: 100%; }
+
+input[type="text"], input[type="tel"], input[type="date"], input[type="cpf"], input[type="cep"], textarea { border: 1px solid #231f20; font-size: 16px; padding: 7px 10px; width: 100%; }
+
+select { border: 1px solid #231f20; height: 40px; width: 100%; font-size: 16px; }
+
+select option { padding: 0px 8px; }
+
+.row { clear: both; display: inline-block; float: left; padding: 15px 0 0; width: 100%; }
+
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .vc_col-sm-1, .vc_col-sm-10, .vc_col-sm-11, .vc_col-sm-12, .vc_col-sm-2, .vc_col-sm-3, .vc_col-sm-4, .vc_col-sm-5, .vc_col-sm-6, .vc_col-sm-7, .vc_col-sm-8, .vc_col-sm-9, .vc_col-xs-1, .vc_col-xs-10, .vc_col-xs-11, .vc_col-xs-12, .vc_col-xs-2, .vc_col-xs-3, .vc_col-xs-4, .vc_col-xs-5, .vc_col-xs-6, .vc_col-xs-7, .vc_col-xs-8, .vc_col-xs-9 { position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box }
+
+/*********************************************** Conteúdo ***********************************************/
+
+header { background: #ffffff none repeat scroll 0 0; left: 0; position: fixed; top: 0; width: 100%; z-index: 99; }
+header nav { padding: 10px 0; }
+header nav ul { display: table; font-size: 0; margin: 0 auto; max-width: 1000px; text-align: right; width: 100%; }
+header nav li { display: inline-block; margin-left: 20px; margin-top: 26px; vertical-align: middle; }
+header nav li:first-child { float: left; margin-left: 0; }
+header nav li a { color: #2f2e2e; display: block; font-size: 14px; font-weight: bold; line-height: 16px; padding: 0 10px; text-align: left; transition: color 0.4s ease 0s; }
+header nav li:first-child a { padding: 0 }
+header nav li a:hover, header nav li a:focus, header nav li.active a { color: #2979ff; transition: color 0.4s ease 0s; }
+header nav ul .Logo { height: 70px; margin-top: 0; text-align: left; width: 180px; }
+header nav ul .Logo img { max-width: 70px; }
+
+.nav-mobile-toggle { display: none; }
+.nav-mobile-toggle .Logo { float: left; margin-bottom: 12px; margin-left: 15px; margin-top: 25px; width: 130px; }
+.navbar-toggle { background: transparent none repeat scroll 0 0; border: 0 none; border-radius: 4px; cursor: pointer; display: block; float: right; height: 45px; margin: 20px 15px 0 10px; padding: 0; top: 0; width: auto; }
+.navbar-toggle .icon-bar { background-color: #131316; display: block; height: 4px; margin-top: 3px; transition: transform 0.3s ease 0s; width: 25px; }
+.navbar-toggle .icon-bar:first-child { margin-top: 0; }
+
+
+#secWeme { padding-top: 90px; }
+
+
+#secHome h2 { text-align: center; font-size: 35px; margin-bottom: 50px; margin-top: 50px; }
+#secHome h2::after { width: 15%; height: 1px; background: #000000; display: block; margin: 15px auto 30px; content: " "; }
+
+.secNewsletter { background: #1b51aa none repeat scroll 0 0; color: #ffffff; padding-top: 50px; }
+.secNewsletter h2 { border-right: 1px solid #1b51aa; color: #ffffff; display: block; font-size: 40px; letter-spacing: 0.05em; line-height: 40px; margin: 0 -1px 50px auto; max-width: 300px; padding-bottom: 50px; position: relative; text-align: left; width: 100%; }
+.secNewsletter h4 { font-size: 18px; letter-spacing: 0; line-height: 22px; margin-bottom: 50px; padding: 0 75px 0 50px; text-align: justify; }
+.secNewsletter .Conteudo { display: table; }
+.secNewsletter .Cell { vertical-align: top; position: relative; }
+.secNewsletter .Cell.Left { border-right: 1px solid; width: 50%; }
+.secNewsletter .News { padding: 0 75px 50px 50px; }
+.secNewsletter .News input[type="email"], .secNewsletter .News input[type="text"] { background: transparent none repeat scroll 0 0; border: 1px solid #ffffff; color: #ffffff; font-size: 14px; line-height: 17px; margin-bottom: 10px; padding: 8px; width: 100%; }
+.secNewsletter .News input[type="button"], .secNewsletter .News input[type="submit"] { background: #ffffff none repeat scroll 0 0; color: rgba(41, 121, 255, 1); width: 100%; }
+
+
+#secGenero { margin-bottom: 0; float: left; }
+#secGenero h2 { text-align: center; font-size: 35px; margin-bottom: 50px; margin-top: 50px; }
+#secGenero h2::after { width: 15%; height: 1px; background: #000000; display: block; margin: 15px auto 30px; content: " "; }
+#secGenero h3 { text-align: center; }
+#secGenero h4 { font-size: 22px; margin-top: 15px; margin-bottom: 5px; border-top: 1px solid; padding-top: 15px; }
+#secGenero hr { clear: both; width: 90%; margin: 0 auto 25px; opacity: 0.3; }
+#secGenero .Genero { }
+#secGenero .Genero h3 { text-align: center; margin-bottom: 15px; }
+#secGenero .Genero .Feminino { width: 50%; background: rgba(255, 99, 132, 0.2); padding: 30px 0; }
+#secGenero .Genero .Masculino { width: 50%; background: rgba(54, 162, 235, 0.2); padding: 30px 0; }
+#secGenero .Genero .Grafico { max-width: 500px; margin: 0 auto; position: relative; width: 90%; }
+
+
+footer { }
+footer .Left { font-size: 13px; font-weight: bold; width: 50%; }
+footer .Right { border-left: 1px solid; font-size: 13px; font-weight: bold; line-height: 20px; padding: 50px 75px 50px 50px; }
+
+@media (min-width:992px) {
+    .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 { float: left; margin-bottom: 30px; }
+    .col-md-12 { width: 100% }
+    .col-md-11 { width: 91.66666667% }
+    .col-md-10 { width: 83.33333333% }
+    .col-md-9 { width: 75% }
+    .col-md-8 { width: 66.66666667% }
+    .col-md-7 { width: 58.33333333% }
+    .col-md-6 { width: 50% }
+    .col-md-5 { width: 41.66666667% }
+    .col-md-4 { width: 33.33333333% }
+    .col-md-3 { width: 25% }
+    .col-md-2 { width: 16.66666667% }
+    .col-md-1 { width: 8.33333333% }
+}
+
+
+@media screen and (max-width: 965px) {
+    .nav-mobile-toggle, .nav-mobile-back { display: block; margin-top: -15px; }
+    .nav-mobile-toggle .Logo { display: inline-block; float: left; margin-right: 15px; margin-top: 30px; width: 50px; }
+    header { background: #ffffff; overflow: hidden; position: fixed; top: 0 !important; }
+    .nav-mobile-toggle { display: block; }
+    nav { display: none; height: auto; background: transparent; }
+    nav ul { padding: 0; height: auto; }
+    nav ul li { border-top: 1px solid; display: block; margin-top: 0; padding: 0; text-align: left; }
+    nav ul li a { display: block; padding: 12px 15px; }
+    nav ul .Logo { display: none; position: absolute; width: 45px; }
+}
+
+@media screen and (max-width: 768px) {
+
+    .Cell { display: block; height: auto; vertical-align: middle; width: 100%; }
+    .secNewsletter h2 { border-right: 1px solid #1b51aa; color: #ffffff; display: block; font-size: 40px; letter-spacing: 0.05em; line-height: 40px; margin: 0 0 50px auto; max-width: 300px; padding-bottom: 0; position: relative; text-align: left; width: 100%; }
+    footer .Left { font-size: 13px; font-weight: bold; padding: 15px 0; text-align: center; width: 100%; }
+    footer .Right { border: 0 none; font-size: 13px; font-weight: bold; line-height: 20px; padding: 20px 25px 50px; text-align: center; }
+}
+
+@media screen and (max-width: 500px) {
+
+    .secNewsletter .Cell.Left { border-right: 1px solid; text-align: left; width: 100%; }
+    .secNewsletter h2 { max-width: 100%; padding-left: 50px; }
+}

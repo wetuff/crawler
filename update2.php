@@ -15,7 +15,6 @@
 	$empresa = $_POST['empresa'];
 	$objetivo = $_POST['objetivo'];
 	$useragent = $_POST['useragent'];
-	$cargo = $_POST['cargo'];
 
 	if (!isset($_POST)){
 		return 0;
@@ -42,15 +41,11 @@
 
 	if (empty($check)) { // if new user . Insert a new record		
 
-		if($cargo != null && $cargo != ""){
-			$query = "INSERT INTO users (oauth_provider, oauth_uid, first_name, last_name, email, about, gender, locale, picture, link, visitas, empresa, cargo) VALUES ('$provider','$id','$firstName','$lastName','$email','$about','$gender','$locale','$picture','$link', '1','$empresa','$cargo')";
-		} else{
-			$query = "INSERT INTO users (oauth_provider, oauth_uid, first_name, last_name, email, about, gender, locale, picture, link, visitas, empresa) VALUES ('$provider','$id','$firstName','$lastName','$email','$about','$gender','$locale','$picture','$link', '1','$empresa')";
-		}
-		$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent) VALUES ('$id','$objetivo','$useragent')";
+		$query = "INSERT INTO users (oauth_provider, oauth_uid, first_name, last_name, email, about, gender, locale, picture, link, visitas, empresa) VALUES ('$provider','$id','$firstName','$lastName','$email','$about','$gender','$locale','$picture','$link', '1','$empresa')";
+		//$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent) VALUES ('$id','$objetivo','$useragent')";
 
 		mysqli_query($connection, $query);
-		mysqli_query($connection, $queryObjetivo);
+		//mysqli_query($connection, $queryObjetivo);
 
 		print_r("created");
 
@@ -59,15 +54,10 @@
 		if($today!=$date){
 
 			$query = "UPDATE users SET oauth_provider='$provider', first_name='$firstName', last_name='$lastName', email='$email', about='$about', gender='$gender', locale='$locale', picture='$picture', link='$link', visitas=visitas+1, empesa='$empresa' where oauth_uid='$id'";	
-			$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent) VALUES ('$id','$objetivo','$useragent')";
+			//$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent) VALUES ('$id','$objetivo','$useragent')";
 
 			mysqli_query($connection, $query);
-			mysqli_query($connection, $queryObjetivo);
-
-			if($cargo != null && $cargo != ""){
-				$queryC = "UPDATE users SET cargo='$cargo' where oauth_uid='$id'";
-				mysqli_query($connection, $queryC);
-			}
+			//mysqli_query($connection, $queryObjetivo);
 
 			print_r("update");
 		} else {
