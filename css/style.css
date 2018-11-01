@@ -133,8 +133,8 @@ header .Logo { margin: 30px auto; max-width: 120px; }
 
 
 .secRelatorio { }
-.secRelatorio .Filtro {  }
-.secRelatorio #slcPeriodoIndicadores { max-width: 300px; display: block; float: left; }
+.secRelatorio .Filtro { display: table; }
+.secRelatorio #slcPeriodoIndicadores, .secRelatorio #txtData { max-width: 300px; display: block; float: left; }
 
 
 

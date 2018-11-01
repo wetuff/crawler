@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+
 	require_once '../functions.php';
 	header('Content-Type: text/html; charset=utf-8');
 
@@ -101,7 +102,7 @@
 
 								<div class="descricao"><?php echo $descricao; ?></div>
 
-								<div class="botao"><a id="btnSaveEvent" evento="<?php echo $id; ?>">Salvar</div>
+								<div class="botao"><a id="btnSaveEvent" evento="<?php echo $id; ?>">Salvar</a></div>
 								
 							</div>
 

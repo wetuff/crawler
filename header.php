@@ -1,3 +1,27 @@
+<?php
+
+    function redirect($filename) {
+    	if (!headers_sent())
+    		header('Location: '.$filename);
+    	else {
+    		echo '<script type="text/javascript">';
+    		echo 'alert("Tempo esgotado! Faça o login novamente! :)");';
+    		echo 'window.location.href="'.$filename.'";';
+    		echo '</script>';
+    		echo '<noscript>';
+    		echo '<meta http-equiv="refresh" content="0;url='.$filename.'" />';
+    		echo '</noscript>';
+    	}
+    }
+
+	session_start();
+	if(empty($_SESSION['session_ID'])){
+		session_destroy();
+		redirect('/login.php');
+		die();
+	}
+?>
+
 <!doctype html>
 <html>
 	<head>
@@ -21,6 +45,10 @@
 		<link rel="apple-touch-startup-image" href="imagens/logo-weme.png">
 		<link rel="image_src" href="imagens/logo-weme.png" />
 		<link rel="manifest" href="manifest.json">
+		<link rel="icon" href="http://www.weme.com.br/wp-content/uploads/2018/02/logo-weme-w300-100x100.png" sizes="32x32" />
+		<link rel="icon" href="http://www.weme.com.br/wp-content/uploads/2018/02/logo-weme-w300.png" sizes="192x192" />
+		<link rel="apple-touch-icon-precomposed" href="http://www.weme.com.br/wp-content/uploads/2018/02/logo-weme-w300.png" />
+		<meta name="msapplication-TileImage" content="http://www.weme.com.br/wp-content/uploads/2018/02/logo-weme-w300.png" />
 	</head>
 	<body>
 		<header class="collapse">
@@ -41,12 +69,6 @@
 					<li title="Por Gênero" hash="Por Gênero"><a href="/perfil/genero.php">Por Gênero</a></li>
 					<li title="Tendências" hash="Tendências"><a href="/tendencias/">Tendências</a></li>
 					<li title="Workshops" hash="Workshops"><a href="/workshops/">Workshops</a></li>
-					<!--<li title="Design" hash="Design"><a href="relatorio-design.php">Design</a></li>
-					<li title="Tecnologia" hash="Tecnologia"><a href="relatorio-tecnologia.php">Tecnologia</a></li>
-					<li title="Empreendedorismo" hash="Empreendedorismo"><a href="relatorio-empreendedorismo.php">Empreendedorismo</a></li>
-					<li title="Saúde" hash="Saude"><a href="relatorio-saude.php">Saúde</a></li>
-					<li title="Educação" hash="Educacao"><a href="relatorio-saude.php">Educação</a></li>
-					<li title="Outros" hash="Outros"><a href="relatorio-outros.php">Outros</a></li>-->
 				</ul>
 			</nav>
 		</header>

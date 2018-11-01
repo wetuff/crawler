@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	
 	require_once '../functions.php';	
 	header('Content-Type: text/html; charset=utf-8');
@@ -27,8 +27,8 @@
 	}
 
 	$queryWSfeminino = "SELECT user_workshop.workshop_id, c2.name FROM crawler.user_workshop
-						INNER JOIN crawler.users c1 ON user_workshop.user_id = c1.id AND c1.gender IN ('feminino', 'F')
-						INNER JOIN crawler.workshops c2 ON user_workshop.workshop_id = c2.id";
+					INNER JOIN crawler.users c1 ON user_workshop.user_id = c1.id AND c1.gender IN ('feminino', 'F')
+					INNER JOIN crawler.workshops c2 ON user_workshop.workshop_id = c2.id";
 	$resultWSfeminino = mysqli_query($connection, $queryWSfeminino);
 	$workshopfeminino = array();
 
@@ -63,8 +63,8 @@
 	}
 
 	$queryWSMasculino = "SELECT user_workshop.workshop_id, c2.name FROM crawler.user_workshop
-						INNER JOIN crawler.users c1 ON user_workshop.user_id = c1.id AND c1.gender IN ('masculino', 'M')
-						INNER JOIN crawler.workshops c2 ON user_workshop.workshop_id = c2.id";
+					INNER JOIN crawler.users c1 ON user_workshop.user_id = c1.id AND c1.gender IN ('masculino', 'M')
+					INNER JOIN crawler.workshops c2 ON user_workshop.workshop_id = c2.id";
 	$resultWSMasculino = mysqli_query($connection, $queryWSMasculino);
 	$workshopMasculino = array();
 

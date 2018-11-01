@@ -1,0 +1,53 @@
+
+#secProjetos { margin-bottom: 50px }
+#secProjetos h2 { text-align: center; font-size: 35px; margin-bottom: 50px; margin-top: 50px; }
+#secProjetos h2::after { width: 15%; height: 1px; background: #000000; display: block; margin: 15px auto 30px; content: " "; }
+#secProjetos h4 { font-size: 22px; margin-top: 15px; margin-bottom: 5px; border-top: 1px solid; padding-top: 15px; }
+
+#secProjetos input[type=text], #secProjetos input[type=email], #secProjetos input[type=password], #secProjetos textarea { border: 0; border-bottom: 1px solid; margin-bottom: 15px; }
+
+#secProjetos .imagem img { margin-right: 15px; margin-bottom: 15px; }
+#secProjetos .nome { font-size: 40px; font-weight: bold; margin-bottom: 5px; }
+#secProjetos .email { font-style: italic; }
+#secProjetos .interesses { margin-top: 20px; font-size: 16px; }
+#secProjetos .empresa { }
+#secProjetos .endereco { }
+#secProjetos .telefone { }
+#secProjetos .sobre { margin-top: 50px }
+
+#secProjetos .Outros { }
+#secProjetos .Outros h3 { font-size: 30px; margin: 30px 0 15px; }
+#secProjetos .Outros .total { font-size: 18px; border-top: 1px solid #ccc; padding-top: 10px; margin-top: 15px; }
+#secProjetos .Outros .evento { font-size: 16px; padding-left: 15px; margin-bottom: 5px; }
+
+/*#listaProjetos { }
+#listaProjetos > li { display: inline-table; margin-bottom: 30px; width: 20%; border-radius: 5px; padding: 15px; border: 1px solid #ddd; margin-left: 15px; margin-right: 15px; vertical-align: top; cursor: pointer; }*/
+#listaProjetos { display: flex; flex-flow: row wrap; margin-left: -10px; margin-right: -10px; }
+#listaProjetos > a { font-size: 16px; vertical-align: top; padding: 15px; border: 1px solid #ddd; flex: 1 1 1; width: calc(20% - 20px); margin: 10px; cursor: pointer; }
+#listaProjetos > a:hover { background: #eee; }
+#listaProjetos > a.active { display: table; width: calc(100% - 20px); background: #eee; padding: 15px 15px 0 15px; }
+#listaProjetos a * { font-size: 14px; }
+#listaProjetos a .titulo { font-weight: bold; display: table-cell; width: 100%; font-size: 18px; line-height: 26px; vertical-align: middle; padding-right: 10px; word-break: break-all; text-transform: uppercase; }
+#listaProjetos a .valor { }
+#listaProjetos a .empresa {  }
+
+
+
+
+@media screen and (max-width: 1300px) {
+    #listaProjetos a { min-width: calc(25% - 20px); }
+}
+
+@media screen and (max-width: 1024px) {
+    #listaProjetos a { min-width: calc(33.3% - 20px); }
+    #listaProjetos li .info .visitante { width:33.3% }
+}
+
+@media screen and (max-width: 768px) {
+    #listaProjetos a { min-width: auto; width: calc(100% - 20px); }
+    #listaProjetos li .info .visitante { width: 50% }
+}
+
+@media screen and (max-width: 600px) {
+    #listaProjetos li .info .visitante { width: 100% }
+}

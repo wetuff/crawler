@@ -55,7 +55,7 @@
 	$empresas;
 	$workshops;
 	$query = "SELECT user_id, workshop_id, paid, pagseguro_code, c1.name, c1.price FROM crawler.user_workshop INNER JOIN crawler.workshops c1 ON workshop_id = c1.id";
-	$query2 = "SELECT * FROM crawler.users";
+	$query2 = "SELECT t2.*, t3.name FROM crawler.users t2 LEFT JOIN crawler.cargo t3 ON (t2.cargo IS NOT NULL AND t2.cargo = t3.id)";
 	$query3 = "SELECT * FROM crawler.empresas";
 	$result = mysqli_query($connection, $query);
 	$result2 = mysqli_query($connection, $query2);
@@ -73,7 +73,7 @@
 		while($aux = mysqli_fetch_array($result2)){
 			$empresa = ("Não informado");
 			if(($aux["empresa"]) != "" && ($aux["empresa"]) != null){ $empresa = ($aux["empresa"]); }			
-			$users[] = array( 'id' => $aux["oauth_uid"], 'name' => ($aux["first_name"]), 'email' => ($aux["email"]), 'visitas' => $aux["visitas"], 'sobrenome' => ($aux["last_name"]), 'provedor' => $aux["oauth_provider"], 'sobre' => ($aux["about"]), 'local' => ($aux["locale"]), 'imagem' => $aux["picture"], 'link' => ($aux["link"]), 'empresa' => $empresa);
+			$users[] = array( 'id' => $aux["oauth_uid"], 'name' => ($aux["first_name"]), 'email' => ($aux["email"]), 'visitas' => $aux["visitas"], 'sobrenome' => ($aux["last_name"]), 'provedor' => $aux["oauth_provider"], 'sobre' => ($aux["about"]), 'local' => ($aux["locale"]), 'imagem' => $aux["picture"], 'link' => ($aux["link"]), 'empresa' => $empresa, 'cargo' => ($aux["name"]));
 		}
 	}
 

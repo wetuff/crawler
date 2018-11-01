@@ -6,6 +6,7 @@
 	$cargo = $_POST['cargo'];
 	$objetivo = $_POST['objetivo'];
 	$useragent = $_POST['useragent'];
+	$motivo = $_POST['motivo'];
 	$id = $_POST['id'];
 
 	if (!isset($_POST)){
@@ -32,7 +33,7 @@
 		if($today!=$date){
 
 			$query = "UPDATE users SET visitas=visitas+1 where email='$email'";	
-			$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent) VALUES ('$id','$objetivo','$useragent')";
+			$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent, motivo) VALUES ('$id','$objetivo','$useragent', '$motivo')";
 
 			mysqli_query($connection, $query);
 			mysqli_query($connection, $queryObjetivo);
@@ -55,7 +56,7 @@
 			} else {
 				$query = "INSERT INTO invalido (oauth_uid, email, visitas, useragent) VALUES ('$id','$email','1','$useragent')";
 			}
-			$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent) VALUES ('$id','$objetivo','$useragent')";
+			$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent, motivo) VALUES ('$id','$objetivo','$useragent', '$motivo')";
 			mysqli_query($connection, $query);
 			mysqli_query($connection, $queryObjetivo);
 			print_r("update 2");
@@ -63,7 +64,7 @@
 			$query = "UPDATE invalido SET visitas=visitas+1 where email='$email'";
 			foreach($jaCadasgtrado2 as $term_single) {
 				$id = $term_single['oauth_uid'];
-				$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent) VALUES ('$id','$objetivo','$useragent')";
+				$queryObjetivo = "INSERT INTO objetivos (oauth_uid, objetivo, useragent, motivo) VALUES ('$id','$objetivo','$useragent', '$motivo')";
 			}
 			mysqli_query($connection, $query);
 			mysqli_query($connection, $queryObjetivo);

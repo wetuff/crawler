@@ -1,12 +1,29 @@
 ﻿
 jQuery(document).ready(function () {
 
+    if ($(document).find("#txtTelefone").length > 0) {
+        var SPMaskBehavior = function (val) {
+            return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+        }, spOptions = {
+            onKeyPress: function (val, e, field, options) {
+                field.mask(SPMaskBehavior.apply({}, arguments), options);
+            }
+        };
+
+        $('#txtTelefone').mask(SPMaskBehavior, spOptions);
+    }
+
     if ($(document).find("#contactList").length > 0) {
         var options = {
-            valueNames: ['titulo']
+            valueNames: ['titulo', 'email']
         };
         var userList = new List('secProfile', options);
     }
+
+    $(document).on('click', '#btnSaveProfile', function () {
+        var id = $(this).attr("profile");
+        updateProfile(id);
+    });
 
 });
 
@@ -25,6 +42,7 @@ function loadUsers(info, empresas, workshops) {
 
         var infoEmpresa = "";
         var teste = (usuario.email).substring((usuario.email).indexOf("@") + 1);
+        var cargo = "";
 
         jQuery.each(empresas, function (index, empresa) {
 
@@ -34,7 +52,9 @@ function loadUsers(info, empresas, workshops) {
 
         });
 
-        HTML += '<a href="/visitante/perfil.php?email=' + usuario.email + '"><span class="titulo">' + usuario.name + '</span>' + infoEmpresa + '<span class="email">' + usuario.email + '</span></a>';
+        if (usuario.cargo != "" && usuario.cargo != null) { cargo = '<b>cargo: </b>' + usuario.cargo; }
+
+        HTML += '<a href="/visitante/perfil.php?email=' + usuario.email + '"><span class="titulo">' + usuario.name + '</span>' + infoEmpresa + '<span class="cargo">' + cargo + '</span><span class="email"><b>E-mail:</b> ' + usuario.email + '</span></a>';
 
     });
 
@@ -79,7 +99,6 @@ function loadWorkshopProfile(Infos) {
 
 function loadTendencia(micros) {
 
-    console.log(micros);
     var HTML = "";
 
     if (micros != "" && micros != null) {
@@ -102,9 +121,31 @@ function loadTendencia(micros) {
         });
 
         jQuery.each(idsMicro, function (index, tendencia) {
-            HTML += '<li style="font-size:' + (parseInt(pesoMicro[index]) + 15) + 'px;"><a href="/tendencias/tendencia.php?tendencia=' + idsMicro[index] + '"><span class="titulo">' + tendenciasMicro[index] + '</span></a></li>';
+            HTML += '<li style="font-size:' + ((parseInt(pesoMicro[index]) * 1.5) + 11.5) + 'px;"><a href="/tendencias/tendencia.php?tendencia=' + idsMicro[index] + '"><span class="titulo">' + tendenciasMicro[index] + '</span></a></li>';
         });
     }
 
     $(".interesses span").html(HTML);
+}
+
+function updateProfile(info) {
+
+    var cargo, endereco, telefone;
+
+    cargo = $(document).find("#slcCargo2 option:selected").val();
+    endereco = $(document).find("#txtEndereco").val();
+    telefone = $(document).find("#txtTelefone").val();
+
+    if (confirm("Tem certeza que deseja realizar esta atualização?")) {
+        $.ajax({
+            type: "POST",
+            url: "/visitante/updateVisitante.php",
+            data: { id: info, cargo: JSON.stringify(cargo), endereco: JSON.stringify(endereco), telefone: JSON.stringify(telefone) },
+            success: function (data) {
+                alert("Atualização realizada com sucesso");
+                window.location = "/visitante/";
+            }
+        });
+    }
+
 }

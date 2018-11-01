@@ -1,6 +1,9 @@
+<?php
+	
+	require_once '../functions.php';	
+	header('Content-Type: text/html; charset=utf-8');
 
-
-		<?php include '../header.php'; ?>
+	include '../header.php'; ?>
 
 		<div data-role="page" class="secWeme" id="secWeme">
 			<div role="main">

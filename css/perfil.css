@@ -45,9 +45,9 @@ section .Content { display: table-cell; vertical-align: middle; position: relati
 
 .Conteudo { margin: 0 auto; max-width: 1000px; position: relative; width: 100%; }
 
-button, .btn { background: #ffed00 none repeat scroll 0 0; border: 0; color: #000000; cursor: pointer; display: block; font-size: 20px; font-weight: bold; line-height: 20px; margin-left: auto; margin-right: auto; max-width: 100%; padding: 25px 0; text-transform: uppercase; width: 100%; }
+button, .btn { background: #1b51aa none repeat scroll 0 0; border: 0; color: #ffffff; cursor: pointer; display: block; font-size: 20px; line-height: 20px; margin-left: auto; margin-right: auto; max-width: 100%; padding: 25px; width: 100%; border-radius: 7px; }
 
-input[type="text"], input[type="tel"], input[type="date"], input[type="cpf"], input[type="cep"], textarea { border: 1px solid #231f20; font-size: 16px; padding: 7px 10px; width: 100%; }
+input[type="text"], input[type="tel"], input[type="date"], input[type="cpf"], input[type="cep"], input[type="password"], textarea { border: 1px solid #231f20; font-size: 16px; padding: 7px 10px; width: 100%; }
 
 select { border: 1px solid #231f20; height: 40px; width: 100%; font-size: 16px; }
 

@@ -2,10 +2,25 @@
 	require_once 'functions.php';
 	header('Content-Type: text/html; charset=utf-8');
 
+	$query2 = "SELECT * FROM crawler.cargo ORDER BY name ASC";
+	$result2 = mysqli_query($connection, $query2);
+
 	$query3 = "SELECT * FROM crawler.macrotendencias";
 	$result3 = mysqli_query($connection, $query3);
 
+	$query4 = "SELECT * FROM crawler.negocios ORDER BY negocio ASC";
+	$result4 = mysqli_query($connection, $query4);
+
 	$interesses = "";
+	$cargos = "";
+	$negocios = "";
+
+	if ( $result2 ) 
+	{ 
+		while($aux = mysqli_fetch_array($result2)){
+			$cargos .= '<option value="'.$aux["id"].'">'.$aux["name"].'</option>';				
+		}
+	}
 
 	if ( $result3 ) 
 	{ 
@@ -13,6 +28,14 @@
 			$interesses .= '<option value="'.$aux["tendencia"].'">'.$aux["tendencia"].'</option>';				
 		}
 	}
+
+	if ( $result4 ) 
+	{ 
+		while($aux = mysqli_fetch_array($result4)){
+			$negocios .= '<option value="'.$aux["idNegocio"].'">'.$aux["negocio"].'</option>';				
+		}
+	}
+
 ?>
 <!doctype html>
 <html>
@@ -90,7 +113,24 @@
 							<div class="row">
 								<div class="col-md-12">
 									<label>Cargo:</label>
-									<input type="text" name="txtCargo2" id="txtCargo2">
+									<select id="slcCargo2" name="slcCargo2">
+										<option value="">Selecione</option>
+										<?php echo $cargos; ?>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<label>O que você veio fazer aqui?</label>
+									<select id="slcMotivo2" name="slcMotivo2" required>
+										<option selected value="Não informado">Selecione</option>
+										<option value="Uso do espaço">Uso do espaço</option>
+										<option value="Home office">Home office</option>
+										<option value="Eventos">Eventos</option>
+										<option value="Projeto com time weme">Projeto com time weme</option>
+										<option value="Reunião pontual">Reunião pontual</option>
+										<option value="Programa de ensino">Programa de ensino</option>
+									</select>
 								</div>
 							</div>
 							<div class="row">
@@ -138,8 +178,34 @@
 							</div>
 							<div class="row">
 								<div class="col-md-12">
+									<label>Negócio:</label>
+									<select id="slcNegocio" name="slcNegocio">
+										<option value="">Selecione</option>
+										<?php echo $negocios; ?>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
 									<label>Cargo:</label>
-									<input type="text" name="txtCargo" id="txtCargo">
+									<select id="slcCargo" name="slcCargo">
+										<option value="">Selecione</option>
+										<?php echo $cargos; ?>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<label>O que você veio fazer aqui?</label>
+									<select id="slcMotivo" name="slcMotivo" required>
+										<option selected value="Não informado">Selecione</option>
+										<option value="Uso do espaço">Uso do espaço</option>
+										<option value="Home office">Home office</option>
+										<option value="Eventos">Eventos</option>
+										<option value="Projeto com time weme">Projeto com time weme</option>
+										<option value="Reunião pontual">Reunião pontual</option>
+										<option value="Programa de ensino">Programa de ensino</option>
+									</select>
 								</div>
 							</div>
 							<div class="row">

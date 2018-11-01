@@ -47,9 +47,14 @@
 				<div class="Content">
 					<div class="Conteudo">
 						<div class="Box Filtro">
-							<select id="slcPeriodoIndicadores"></select>
-							<div class="botao" id="exportaExcel">
-								<button style="margin-bottom:0" class="Botao">Exportar para excel</button>
+							<div class="Cell" style="width:100%">
+								<select id="slcPeriodoIndicadores"></select>
+								<input type="text" id="txtData" style="display:none" placeholder="Selecione a data">
+							</div>
+							<div class="Cell">
+								<div class="botao" id="exportaExcel">
+									<button style="margin-bottom: 0; width: 200px;" class="Botao">Exportar para excel</button>
+								</div>
 							</div>
 						</div>
 						<div id="listaParticipantes"></div>						
@@ -60,7 +65,7 @@
 			</div>
 		</div>
 	</section>
-
+	<link media="all" rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link media="all" rel="stylesheet" href="/css/style.css" />
 	<link media="all" rel="stylesheet" href="/css/bootstrap.css" />
 	<link media="all" rel="stylesheet" href="/css/font-awesome.css" />

@@ -23,12 +23,14 @@ $(document).ready(function () {
         var nome = $("#txtNome").val();
         var empresa = $("#txtEmpresa").val();
         var email = $("#txtEmail").val();
-        var cargo = $("#txtCargo").val();
+        var cargo = $(document).find("#slcCargo option:selected").val();
+        var negocio = $(document).find("#slcNegocio option:selected").val();
         var objetivo = $(document).find("#slcAssunto option:selected").val();
+        var motivo = $(document).find("#slcMotivo option:selected").val();
         var genero = $(document).find("#slcGenero option:selected").val();
         var agente = navigator.userAgent;
-        if (genero == "" || genero == null) { genero = "-";}
-        var Infos = { provider: 'email', id: $.now(), firstName: nome, lastName: "-", email: email, about: '-', gender: genero, locale: 'weme', picture: '-', link: '-', objetivo: objetivo, empresa: empresa, useragent: agente, cargo: cargo  };
+        if (genero == "" || genero == null) { genero = "-"; }
+        var Infos = { provider: 'email', id: $.now(), firstName: nome, lastName: "-", email: email, about: '-', gender: genero, locale: 'weme', picture: '-', link: '-', objetivo: objetivo, empresa: empresa, useragent: agente, cargo: cargo, negocio: negocio, motivo: motivo };
         cadastro(Infos, 'email');
     });
 
@@ -36,12 +38,13 @@ $(document).ready(function () {
         e.preventDefault();
 
         var email = $("#txtEmail2").val();
-        var cargo = $("#txtCargo2").val();
+        var cargo = $(document).find("#slcCargo2 option:selected").val();
         var objetivo = $(document).find("#slcAssunto2 option:selected").val();
+        var motivo = $(document).find("#slcMotivo2 option:selected").val();
         if (objetivo == "" || objetivo == null) { objetivo = "Não informado"; }
         var agente = navigator.userAgent;
         if (agente == null || agente == "") { agente = "Inválido"; }
-        var Infos = { email: email, objetivo: objetivo, useragent: agente, id: $.now(), cargo: cargo };
+        var Infos = { email: email, objetivo: objetivo, useragent: agente, id: $.now(), cargo: cargo, motivo: motivo };
         jaCadastrado(Infos, 'email');
 
     });
@@ -181,11 +184,11 @@ function cadastro(Infos, location) {
             if (location == 'linkedin') { IN.User.logout(removeProfileData); }
             //alert("Check in realizado com sucesso!");
             setTimeout(function () {
-                window.location.replace('https://www.weme.com.br/eventos/');
+                window.location.replace('http://192.168.0.5:8011/');
             }, 1500);
         }, error: function (data) {
             setTimeout(function () {
-                window.location.replace('https://www.weme.com.br/eventos/');
+                window.location.replace('http://192.168.0.5:8011/');
             }, 1500);
         }
     });
@@ -206,12 +209,12 @@ function jaCadastrado(Infos, location) {
             if (location == 'linkedin') { IN.User.logout(removeProfileData); }
             //alert("Check in realizado com sucesso!");
             setTimeout(function () {
-                window.location.replace('https://www.weme.com.br/eventos/');
+                window.location.replace('http://192.168.0.5:8011/');
             }, 1500);
 
         }, error: function (data) {
             setTimeout(function () {
-                window.location.replace('https://www.weme.com.br/eventos/');
+                window.location.replace('http://192.168.0.5:8011/');
             }, 1500);
         }
     });
